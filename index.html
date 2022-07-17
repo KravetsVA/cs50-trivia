@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // <!-- TODO: Add code to check answers to questions -->
+            function myAnswer(event)
+            {
+                var trigger = event.srcElement;
+                // alert('Kravets ' + trigger.innerHTML);
+
+                if (trigger.innerHTML == "March 9, 1814")
+                {
+                    event.target.style.backgroundColor = 'green'
+
+                    var msg = document.querySelector('.msg1-correct');
+                    msg.style.display = 'block';
+
+                    var msg = document.querySelector('.msg1-incorrect');
+                    msg.style.display = 'none';
+
+                    // alert('OK');
+                }
+                else if (trigger.innerHTML == "March 9, 1714")
+                {
+                    event.target.style.backgroundColor = 'red'
+
+                    var msg = document.querySelector('.msg1-correct');
+                    msg.style.display = 'none';
+
+                    var msg = document.querySelector('.msg1-incorrect');
+                    msg.style.display = 'block';
+                }
+                else if (trigger.innerHTML == "March 9, 1914")
+                {
+                    event.target.style.backgroundColor = 'red'
+
+                    var msg = document.querySelector('.msg1-correct');
+                    msg.style.display = 'none';
+
+                    var msg = document.querySelector('.msg1-incorrect');
+                    msg.style.display = 'block';
+                }
+                else if (trigger.innerHTML == "Great poet of Ukraine")
+                {
+                    event.target.style.backgroundColor = 'green'
+
+                    var msg = document.querySelector('.msg2-correct');
+                    msg.style.display = 'block';
+
+                    var msg = document.querySelector('.msg2-incorrect');
+                    msg.style.display = 'none';
+
+                    // alert('No');
+                }
+                else if (trigger.innerHTML == "Hetman of Ukraine")
+                {
+                    event.target.style.backgroundColor = 'red'
+
+                    var msg = document.querySelector('.msg2-correct');
+                    msg.style.display = 'none';
+
+                    var msg = document.querySelector('.msg2-incorrect');
+                    msg.style.display = 'block';
+                }
+                else if (trigger.innerHTML == "Great Traveler")
+                {
+                    event.target.style.backgroundColor = 'red'
+
+                    var msg = document.querySelector('.msg2-correct');
+                    msg.style.display = 'none';
+
+                    var msg = document.querySelector('.msg2-incorrect');
+                    msg.style.display = 'block';
+                }
+                else if (trigger.innerHTML == "Check Answer")
+                {
+                    var answer = document.getElementsByTagName("input")[0].value;
+                    // alert(answer);
+
+                    if (answer == "yes")
+                    {
+                        var msg = document.querySelector('.msg3-correct');
+                        msg.style.display = 'block';
+
+                        var msg = document.querySelector('.msg3-incorrect');
+                        msg.style.display = 'none';
+                    }
+                    else
+                    {
+                        var msg = document.querySelector('.msg3-correct');
+                        msg.style.display = 'none';
+
+                        var msg = document.querySelector('.msg3-incorrect');
+                        msg.style.display = 'block';
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <ol>
+                    <li>When is the birthday of Taras Shevchenko</li>
+                        <p class = 'msg1-incorrect'>Incorrect</p>
+                        <p class = 'msg1-correct'>Correct!</p>
+                        <button name = "b1814", onclick="myAnswer(event)">March 9, 1814</button>
+                        <button name = "b1714", onclick="myAnswer(event)">March 9, 1714</button>
+                        <button name = "b1914", onclick="myAnswer(event)">March 9, 1914</button>
+                    <li>Who is Taras Shevchenko by profession</li>
+                        <p class = 'msg2-incorrect'>Incorrect</p>
+                        <p class = 'msg2-correct'>Correct!</p>
+                        <button name = "bHetman",   onclick="myAnswer(event)">Hetman of Ukraine</button>
+                        <button name = "bTraveler", onclick="myAnswer(event)">Great Traveler</button>
+                        <button name = "bPoet", onclick="myAnswer(event)">Great poet of Ukraine</button>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Ukrainian poet Taras Shevchenko painted pictures (yes/no)?</h3>
+                    <p class = 'msg3-incorrect'>Incorrect</p>
+                    <p class = 'msg3-correct'>Correct!</p>
+                    <input type = "text" id = "submit1" name = "submit1" value = "yes / no">
+                    <button name = "CheckAnswer", onclick="myAnswer(event)">Check Answer</button>
+            </div>
+        </div>
+
+    </body>
+</html>
